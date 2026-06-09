@@ -1,3 +1,10 @@
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3ZX59B4');</script>
+<!-- End Google Tag Manager -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,8 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ── SEO ── -->
-<title>Герман Смирнов — Фитнес-коуч и нутрициолог | Москва и онлайн</title>
-<meta name="description" content="Герман Смирнов — персональный фитнес-коуч и нутрициолог. Индивидуальные программы тренировок и питания, онлайн-ведение. Официально, по договору. Москва и онлайн.">
+<title>Герман Смирнов — Fitness Coach | Москва и онлайн</title>
+<meta name="description" content="Герман Смирнов — персональный Fitness Coach и нутрициолог. Индивидуальные программы тренировок и питания, онлайн-ведение. Официально, по договору. Москва и онлайн.">
 <meta name="keywords" content="фитнес коуч, персональный тренер Москва, нутрициолог онлайн, программа питания, программа тренировок, фитнес онлайн, коучинг похудение, Герман Смирнов тренер">
 <meta name="author" content="Герман Смирнов">
 <meta name="robots" content="index, follow">
@@ -15,7 +22,7 @@
 <!-- ── Open Graph (соцсети) ── -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://smirnovcoach.ru/">
-<meta property="og:title" content="Герман Смирнов — Фитнес-коуч | Москва и онлайн">
+<meta property="og:title" content="Герман Смирнов — Fitness Coach | Москва и онлайн">
 <meta property="og:description" content="Индивидуальные программы тренировок и питания. Онлайн и очно в Москве. Официально, по договору. Без шаблонов — только система под тебя.">
 <meta property="og:locale" content="ru_RU">
 
@@ -30,11 +37,11 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Герман Смирнов",
-  "jobTitle": "Фитнес-коуч, нутрициолог",
+  "jobTitle": "Fitness Coach, Nutritionist",
   "description": "Персональный фитнес-коуч и нутрициолог. Индивидуальные программы тренировок и питания онлайн и очно в Москве.",
   "url": "https://smirnovcoach.ru",
   "email": "go@smirnovfit.ru",
-  "sameAs": ["https://t.me/german_smirnov"],
+  "sameAs": ["https://t.me/german_smirnov", "https://www.instagram.com/german_smirnov"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Москва",
@@ -138,9 +145,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
-    padding-top: 5rem;
+    padding: 0;
     position: relative;
     overflow: hidden;
+  }
+  .hero-left {
+    padding-top: 7rem;
   }
   .hero-left {
     display: flex;
@@ -149,15 +159,6 @@
     padding: 4rem 4vw;
     position: relative;
     z-index: 2;
-  }
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-bottom: 1.5rem;
   }
   .hero-name {
     font-family: var(--serif);
@@ -169,6 +170,48 @@
     margin-bottom: 0.4em;
   }
   .hero-name em { font-style: italic; font-weight: 400; }
+  .hero-eyebrow {
+    font-family: var(--serif);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+  }
+  .hero-location {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: -0.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.55;
+  }
+  .hero-loc-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--ink-muted);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+  .hero-loc-sep { opacity: 0.4; }
+  /* keep city class for compat */
+  .hero-city {
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    opacity: 0.6;
+    margin-bottom: 1.25rem;
+    margin-top: 0.1rem;
+  }
   .hero-sub {
     font-size: 0.85rem;
     font-weight: 400;
@@ -249,7 +292,7 @@
   }
 
   /* ── SECTION COMMON ── */
-  section { padding: 7rem 4vw; }
+  section { padding: 5.5rem 4vw; }
   .section-label {
     display: flex;
     align-items: center;
@@ -279,7 +322,7 @@
     background: currentColor;
   }
   @media (max-width: 768px) {
-    section { padding: 4rem 5vw; }
+    section { padding: 3rem 5vw; }
   }
 
   /* ── ABOUT ── */
@@ -388,22 +431,35 @@
   .tab-panel.active { display: grid; }
 
   .services-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5px;
-    background: var(--border);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
     border: 1px solid var(--border);
   }
   .service-card {
     background: var(--white);
-    padding: 2.5rem 2rem;
+    padding: 1.75rem 1.25rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.6rem;
+    border-right: 1px solid var(--border);
     transition: background 0.25s;
   }
+  .service-card:last-child { border-right: none; }
   .service-card:hover { background: var(--bg); }
-  .service-icon { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; color: var(--ink-soft); }
-  .service-icon i { font-size: 1.6rem; }
+  .service-icon { display: none; }
+  .service-name { font-size: 1rem; }
+  .service-desc { font-size: 0.78rem; line-height: 1.55; color: var(--ink-muted); }
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .service-card:nth-child(3n) { border-right: none; }
+    .service-card { border-bottom: 1px solid var(--border); }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .service-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .service-card:nth-child(2n) { border-right: none; }
+  }
   .service-name {
     font-family: var(--serif);
     font-size: 1.25rem;
@@ -544,9 +600,10 @@
 
   /* ── FOR WHOM ── */
   #forwhom {
+    padding-bottom: 3.5rem;
     background: var(--ink);
     color: var(--white);
-    background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=60&fit=crop");
+    background-image: url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1400&q=60&fit=crop&crop=top");
     background-size: cover;
     background-position: center 30%;
     background-blend-mode: luminosity;
@@ -605,15 +662,15 @@
   @media (max-width: 768px) { .forwhom-grid { grid-template-columns: 1fr; } }
 
   /* ── DIFFERENTIATORS ── */
-  #diff { background: var(--ink); color: var(--white); }
+  #diff { background: var(--ink); color: var(--white); padding-top: 3.5rem; padding-bottom: 3.5rem; }
   #diff .section-label { color: rgba(255,255,255,0.35); }
   #diff .section-label::before { background: rgba(255,255,255,0.25); }
   #diff .diff-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: end;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
   #diff .diff-header h2 {
     font-family: var(--serif);
@@ -634,11 +691,11 @@
     grid-template-columns: 3rem 1fr auto;
     align-items: center;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: background 0.2s, padding 0.2s, margin 0.2s;
   }
-  .diff-item:hover { background: rgba(255,255,255,0.04); margin: 0 -4vw; padding: 2rem 4vw; }
+  .diff-item:hover { background: rgba(255,255,255,0.04); margin: 0 -4vw; padding: 1rem 4vw; }
   .diff-num {
     font-family: var(--serif);
     font-size: 0.9rem;
@@ -686,7 +743,7 @@
   @media (max-width: 768px) { .photo-strip-inner img { height: 260px; } }
 
   /* ── EDUCATION ── */
-  #education { background: var(--bg-alt); }
+  #education { background: var(--bg-alt); padding-top: 3.5rem; padding-bottom: 3.5rem; }
   #education .edu-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -884,6 +941,100 @@
   .check { color: var(--ink-muted); font-size: 0.85rem; flex-shrink: 0; margin-top: 0.1rem; }
   .package-card.featured .check { color: rgba(255,255,255,0.5); }
 
+
+  /* ── PHILOSOPHY ── */
+  #philosophy {
+    background: var(--bg);
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .philosophy-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    max-width: 1100px;
+  }
+  .phil-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .phil-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    background: var(--ink-muted);
+    flex-shrink: 0;
+  }
+  .phil-quote {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+  }
+  .phil-text {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .phil-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 3rem;
+  }
+  .phil-card {
+    background: var(--ink);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .phil-card-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: rgba(255,255,255,0.15);
+    line-height: 1;
+  }
+  .phil-card-text {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.3;
+  }
+  .phil-card-author {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin-top: 0.5rem;
+  }
+  .phil-note {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    padding: 1.25rem 1.5rem;
+    border-left: 2px solid var(--border);
+    font-style: italic;
+  }
+  @media (max-width: 768px) {
+    .philosophy-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    .phil-aside { padding-top: 0; }
+  }
+
   /* ── FADE IN ── */
   .fade-up {
     opacity: 1;
@@ -988,13 +1139,13 @@
   .episodic-photo:hover img { transform: scale(1.03); }
   @media (max-width: 768px) { .episodic-photo { height: 45vw; } }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     .services-grid { grid-template-columns: 1fr; }
-    .service-card { padding: 2rem 1.5rem; }
+    .service-card { border-right: none; }
   }
 
   /* ── RESULTS / CASES ── */
-  #results { background: var(--ink); color: var(--white); }
+  #results { background: var(--ink); color: var(--white); padding-top: 3.5rem; padding-bottom: 3.5rem; }
   #results .section-label { color: rgba(255,255,255,0.35); }
   #results .section-label::before { background: rgba(255,255,255,0.2); }
   #results h2 { color: var(--white); }
@@ -1090,9 +1241,18 @@
   @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
 
   /* ── FAQ ── */
-  #faq { background: var(--bg-alt); color: var(--ink); }
-  #faq h2 { margin-bottom: 3rem; }
-  .faq-list { max-width: 760px; }
+  #faq { background: var(--bg-alt); color: var(--ink); padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .faq-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+    max-width: 1100px;
+  }
+  .faq-left h2 { margin-bottom: 1rem; }
+  .faq-left p { font-size:0.9rem; color:var(--ink-muted); line-height:1.7; margin-top:0.75rem; }
+  .faq-list { max-width: 100%; }
+  @media (max-width:768px) { .faq-wrap { grid-template-columns:1fr; gap:2rem; } }
   .faq-item {
     border-bottom: 1px solid var(--border);
     cursor: pointer;
@@ -1138,19 +1298,20 @@
   }
   .leadmagnet-wrap {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 240px 1fr;
+    gap: 4rem;
     align-items: center;
-    max-width: 1000px;
+    max-width: 900px;
   }
   .leadmagnet-cover {
     aspect-ratio: 3/4;
+    max-height: 320px;
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.12);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2.5rem;
+    padding: 1.75rem;
     position: relative;
     overflow: hidden;
   }
@@ -1171,9 +1332,9 @@
   }
   .leadmagnet-cover-title {
     font-family: var(--serif);
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: 1.1rem;
     font-weight: 300;
-    line-height: 1.2;
+    line-height: 1.3;
     color: rgba(255,255,255,0.9);
   }
   .leadmagnet-cover-author {
@@ -1230,8 +1391,8 @@
   }
   .btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.7); }
   @media (max-width: 768px) {
-    .leadmagnet-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
-    .leadmagnet-cover { aspect-ratio: 4/3; }
+    .leadmagnet-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .leadmagnet-cover { aspect-ratio: 3/2; max-height: 200px; }
   }
 
   /* ── STICKY MOBILE CTA ── */
@@ -1275,24 +1436,33 @@
     <li><a href="#leadmagnet">Гид</a></li>
     <li><a href="#booking">Запись</a></li>
   </ul>
-  <a href="https://t.me/german_smirnov" target="_blank" class="nav-cta">Написать</a>
+  <div style="display:flex;gap:0.5rem;align-items:center;">
+    <a href="https://t.me/german_smirnov" target="_blank" class="nav-cta">Написать</a>
+    <a href="https://ig.me/m/german_smirnov" target="_blank" class="nav-cta" style="background:transparent;color:var(--ink);border:1px solid var(--border);" title="Instagram Direct">IG</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <h1 class="hero-name fade-up">
+    <p class="hero-eyebrow fade-up">Fitness Coach</p>
+    <h1 class="hero-name fade-up delay-1">
       <em>Герман</em>
       Смирнов
     </h1>
-    <p class="hero-sub fade-up delay-1">Fitness Coach</p>
-    <p class="hero-slogan fade-up delay-2">Лучшие моменты жизни — это полное погружение. В движение. В себя.</p>
+    <div class="hero-location fade-up delay-2">
+      <span class="hero-loc-dot"></span>Москва
+      <span class="hero-loc-sep">·</span>Онлайн
+    </div>
+    <p class="hero-slogan fade-up delay-2">Свобода — это не отсутствие дисциплины. Это когда дисциплина стала твоей природой.</p>
     <div class="hero-btns fade-up delay-3">
       <a href="https://t.me/german_smirnov" target="_blank" class="btn-primary">
-        <span class="btn-icon">✈</span>
-        Написать в Telegram
+        <span class="btn-icon">✈</span>Telegram
       </a>
-      <a href="#services" class="btn-outline">Услуги и цены</a>
+      <a href="https://ig.me/m/german_smirnov" target="_blank" class="btn-outline">
+        Instagram
+      </a>
+      <a href="#services" class="btn-outline" style="border-color:var(--border);color:var(--ink-muted);">Услуги →</a>
     </div>
   </div>
 
@@ -1313,7 +1483,7 @@
     </div>
     <div class="about-body">
       <p class="fade-up">Есть состояние, когда усилие и результат совпадают — когда тело работает, а не сопротивляется. Когда движение перестаёт быть повинностью и становится частью того, кем ты хочешь быть. Я помогаю людям выстраивать именно такое состояние — устойчивое, честное, своё.</p>
-      <div class="pull fade-up delay-1">Тело меняется не тогда, когда ты заставляешь себя. А когда перестаёшь делить жизнь на «до» тренировки и «после».</div>
+      <div class="pull fade-up delay-1">Я не тренируюсь чтобы выглядеть. Я тренируюсь — потому что это я и есть.</div>
       <p class="fade-up delay-2">Фитнес для меня — это всестороннее развитие: сила и подвижность, питание и восстановление, психология и осознанность. Не культ внешности, а культура жизни. Движение, сон, стресс, питание — всё это одна система, и вытащить что-то одно, не трогая остальное, не получится.</p>
       <p class="fade-up delay-3">За этим стоят 2000+ часов обучения — фитнес, нутрициология, коучинг, психология поведения. Не набор бумаг: инструменты, которые я применяю каждый день — в том числе к себе.</p>
     </div>
@@ -1358,12 +1528,6 @@
     </div>
   </div>
 </section>
-
-<!-- EPISODIC PHOTO -->
-<div class="episodic-photo fade-up">
-  <img src="https://wsrv.nl/?url=i.pinimg.com/736x/b1/f8/c4/b1f8c431451e6071bfb62e7a403cda87.jpg&w=1200&output=webp"
-       onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1400&q=85&fit=crop&crop=center'" alt="">
-</div>
 
 <!-- SERVICES -->
 <section id="services">
@@ -1493,7 +1657,7 @@
 <section id="diff">
   <div class="diff-header">
     <h2 class="fade-up">Мой<em style="font-style:italic;"> подход</em></h2>
-    <p class="fade-up delay-1" style="font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.4rem);font-style:italic;font-weight:300;color:var(--ink-soft);line-height:1.6;">Я не продаю мотивацию и не торгую обещаниями трансформации за 30 дней. Я строю системы. Индивидуально. Честно.</p>
+    <p class="fade-up delay-1" style="font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.4rem);font-style:italic;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.6;">Я не продаю мотивацию и не торгую обещаниями трансформации за 30 дней. Я строю системы. Индивидуально. Честно.</p>
   </div>
 
   <div class="diff-list">
@@ -1530,54 +1694,71 @@
   </div>
 </section>
 
-<!-- PHOTO STRIP -->
-<div class="photo-strip">
-  <div class="photo-strip-inner">
-    <img src="https://wsrv.nl/?url=i.pinimg.com/1200x/00/ca/29/00ca29ea9413a636bbd86d5718bf25dc.jpg&h=500&output=webp"
-         onerror="this.src='https://images.unsplash.com/photo-1605296867304-46d5465a13f1?h=500&q=80&fit=crop'" alt="">
-    <img src="https://wsrv.nl/?url=i.pinimg.com/736x/b1/f8/c4/b1f8c431451e6071bfb62e7a403cda87.jpg&h=500&output=webp"
-         onerror="this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?h=500&q=80&fit=crop'" alt="">
-    <img src="https://wsrv.nl/?url=i.pinimg.com/1200x/de/7c/fb/de7cfb3afd88bf6ecd451e306b79f1d5.jpg&h=500&output=webp"
-         onerror="this.src='https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?h=500&q=80&fit=crop'" alt="">
-    <img src="https://wsrv.nl/?url=i.pinimg.com/736x/ad/77/b0/ad77b0f8e82878dd0efd507069579fc8.jpg&h=500&output=webp"
-         onerror="this.src='https://images.unsplash.com/photo-1567013127542-490d757e51cd?h=500&q=80&fit=crop'" alt="">
-    <img src="https://wsrv.nl/?url=i.pinimg.com/1200x/bd/6c/dd/bd6cddde34de6215e88ce25bded64e46.jpg&h=500&output=webp"
-         onerror="this.src='https://images.unsplash.com/photo-1544216717-3bbf52512659?h=500&q=80&fit=crop'" alt="">
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="philosophy-wrap">
+    <div class="phil-main fade-up">
+      <p class="phil-eyebrow">Философия</p>
+      <blockquote class="phil-quote">
+        Фитнес — это не про зал и не про рекорды.<br>
+        Это про осознанную жизнь в своём теле.<br>
+        Про силу, которая даёт свободу.
+      </blockquote>
+      <p class="phil-text">Про движение, которое идёт изнутри — а не из страха или чужих ожиданий. Я строю себя каждый день. Не ломаю — строю. Через дисциплину, через природу, через честность с собой.</p>
+    </div>
+    <div class="phil-aside fade-up delay-2">
+      <div class="phil-card">
+        <div class="phil-card-num">—</div>
+        <div class="phil-card-text">Это моя жизнь.<br>Это мой фитнес.</div>
+        <div class="phil-card-author">Герман Смирнов</div>
+      </div>
+      <div class="phil-note fade-up delay-3">
+        Я не сторонник оверкоучинга. Не буду держать тебя за руку вечно — помогу выстроить систему, которая работает без меня.
+      </div>
+    </div>
   </div>
-</div>
-
-<!-- EPISODIC PHOTO 2 -->
-<div class="episodic-photo fade-up" style="height:45vh;">
-  <img src="https://wsrv.nl/?url=i.pinimg.com/1200x/de/7c/fb/de7cfb3afd88bf6ecd451e306b79f1d5.jpg&w=1400&output=webp"
-       onerror="this.src='https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1400&q=85&fit=crop&crop=center'"
-       alt="" style="object-position:center 30%;">
-</div>
+</section>
 
 <!-- RESULTS -->
 <section id="results">
-  <div class="section-label fade-up">Результаты</div>
-  <h2 class="fade-up delay-1">Цифры,<em> которые говорят сами</em></h2>
-  <div class="results-grid">
+  <div class="section-label fade-up">Мои показатели</div>
+  <h2 class="fade-up delay-1">InBody 270 <em>· 98 из 100</em></h2>
+  <p class="fade-up delay-2" style="color:rgba(255,255,255,0.45);font-size:0.82rem;margin-bottom:3rem;letter-spacing:0.05em;">
+    Рост 190 см · Возраст 32 · Дата измерения 04.01.2010 · Оценка InBody <strong style="color:rgba(255,255,255,0.75);">98/100 баллов</strong>
+  </p>
+  <div class="results-grid" style="grid-template-columns:repeat(5,1fr);">
+
     <div class="result-card fade-up">
-      <div class="result-num">−11 <em>кг</em></div>
-      <div class="result-label">за 4 месяца</div>
-      <div class="result-desc">Снижение веса без потери мышечной массы. Питание перестроено полностью, режим держится до сих пор.</div>
-      <div class="result-context">М., 34 года, офисная работа, тренировки 3×/нед онлайн</div>
+      <div class="result-num">94.5 <em>кг</em></div>
+      <div class="result-label">Вес тела</div>
+      <div class="result-desc">Идеальный вес по InBody — 94.5 кг. Контроль веса: 0.0 кг. Полное соответствие норме.</div>
     </div>
+
     <div class="result-card fade-up delay-1">
-      <div class="result-num">+18 <em>кг жим</em></div>
-      <div class="result-label">за 3 месяца</div>
-      <div class="result-desc">Жим лёжа с 60 до 78 кг. Техника переработана с нуля, нагрузка выстроена грамотно — без травм.</div>
-      <div class="result-context">М., 27 лет, зал 4×/нед, работа с техникой и периодизацией</div>
+      <div class="result-num">49.5 <em>кг</em></div>
+      <div class="result-label">Мышечная масса</div>
+      <div class="result-desc">Масса скелетной мускулатуры — 49.5 кг. Показатель «Превышение» нормы по всем сегментам тела.</div>
     </div>
+
     <div class="result-card fade-up delay-2">
-      <div class="result-num">6 <em>мес</em></div>
-      <div class="result-label">устойчивый режим</div>
-      <div class="result-desc">Клиент, который до этого «начинал и бросал» 4 раза. Система встроилась в жизнь — не требует силы воли.</div>
-      <div class="result-context">М., 31 год, плотный график, онлайн-ведение + питание</div>
+      <div class="result-num">9.9 <em>%</em></div>
+      <div class="result-label">Процент жира</div>
+      <div class="result-desc">Содержание жира 9.3 кг при весе 94.5 кг. Висцеральный жир — уровень 3 (низкий из 10).</div>
     </div>
+
+    <div class="result-card fade-up delay-3">
+      <div class="result-num">85.2 <em>кг</em></div>
+      <div class="result-label">Безжировая масса</div>
+      <div class="result-desc">Норма 60.8–74.3 кг. Значительное превышение нормы — результат системной работы с телом.</div>
+    </div>
+
+    <div class="result-card fade-up delay-4">
+      <div class="result-num">26.2</div>
+      <div class="result-label">ИМТ</div>
+      <div class="result-desc">ИМТ 26.2 при 9.9% жира — наглядный пример того, как цифра на весах врёт без состава тела.</div>
+    </div>
+
   </div>
-  <p class="fade-up delay-3" style="margin-top:2rem;font-size:0.78rem;color:rgba(255,255,255,0.2);letter-spacing:0.05em;">* Данные с разрешения клиентов, имена изменены</p>
 </section>
 <section id="education">
   <div class="section-label fade-up">Образование</div>
@@ -1628,34 +1809,15 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-label fade-up">Отзывы</div>
-  <h2 class="fade-up delay-1">Что говорят<em> клиенты</em></h2>
-  <div class="testi-grid">
-    <div class="testi-card fade-up">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">Первый раз в жизни занимаюсь дольше двух месяцев. Всё потому что программа нормальная — не «50 бёрпи каждый день», а реально под меня. Питание тоже не голодовка — просто порядок.</div>
-      <div class="testi-author">Алексей, 29 лет · онлайн-ведение</div>
-    </div>
-    <div class="testi-card fade-up delay-1">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">Герман объясняет не просто «что делать», но и почему. После первого месяца я уже сам понимал, что есть и как тренироваться. Это ценнее любой готовой программы.</div>
-      <div class="testi-author">Дмитрий, 35 лет · программа тренировок + питание</div>
-    </div>
-    <div class="testi-card fade-up delay-2">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">Работаем уже 4 месяца. За это время −9 кг и наконец спина перестала болеть — оказалось дело в технике и мобильности, которую я вообще игнорировал. Системный подход реально работает.</div>
-      <div class="testi-author">Михаил, 41 год · очное ведение, Москва</div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq">
-  <div class="section-label fade-up">Вопросы</div>
-  <h2 class="fade-up delay-1">Часто<em> спрашивают</em></h2>
-  <div class="faq-list fade-up delay-2">
+  <div class="faq-wrap">
+    <div class="faq-left fade-up">
+      <div class="section-label">Вопросы</div>
+      <h2>Часто<em> спрашивают</em></h2>
+      <p>Собрал ответы на то, что спрашивают чаще всего — перед первым шагом и в начале работы.</p>
+    </div>
+    <div class="faq-list fade-up delay-1">
     <div class="faq-item">
       <div class="faq-q">Нужен ли зал или можно заниматься дома? <span class="faq-toggle">+</span></div>
       <div class="faq-a">Можно и то, и другое. Программа составляется под твои условия — зал, дом, минимум оборудования. Важно не где, а как. Единственное исключение — очные тренировки в Москве проходят в зале.</div>
@@ -1689,7 +1851,7 @@
     <div class="leadmagnet-cover fade-up">
       <div class="leadmagnet-cover-tag">Бесплатно · PDF-гид</div>
       <div class="leadmagnet-cover-title">3 ошибки в питании, которые мешают прогрессу</div>
-      <div class="leadmagnet-cover-author">Герман Смирнов · Фитнес-коуч</div>
+      <div class="leadmagnet-cover-author">Герман Смирнов · Fitness Coach</div>
     </div>
     <div class="leadmagnet-body fade-up delay-1">
       <div class="section-label">Бесплатный гид</div>
@@ -1721,7 +1883,7 @@
       <blockquote class="fade-up delay-1">
         Лучшие моменты жизни — это полное погружение в то, что делаешь. Я помогаю выстроить тело и режим так, чтобы движение стало не обязанностью, а состоянием. Не обещаю быстрых результатов. Обещаю честную систему — и присутствие рядом на каждом шагу.
       </blockquote>
-      <cite class="fade-up delay-2">Герман Смирнов · Фитнес-коуч</cite>
+      <cite class="fade-up delay-2">Герман Смирнов · Fitness Coach</cite>
     </div>
   </div>
 </section>
@@ -1752,7 +1914,10 @@
         Записаться онлайн
       </a>
       <a href="https://t.me/german_smirnov" target="_blank" class="action-btn-outline">
-        Написать в Telegram
+        Telegram
+      </a>
+      <a href="https://ig.me/m/german_smirnov" target="_blank" class="action-btn-outline">
+        Instagram
       </a>
     </div>
   </div>
@@ -1764,10 +1929,13 @@
   <div class="cta-inner">
     <h2 class="fade-up">Готов<em> начать?</em></h2>
     <p class="fade-up delay-1">Напиши — расскажи свою цель. Разберёмся вместе.</p>
+    <p class="fade-up delay-2" style="font-size:0.8rem;color:rgba(255,255,255,0.3);margin-top:0.5rem;letter-spacing:0.05em;">Без оверкоучинга. Без лишнего давления. Только система.</p>
     <div class="cta-buttons fade-up delay-2">
       <a href="https://t.me/german_smirnov" target="_blank" class="btn-light">
-        <span class="btn-icon">→</span>
-        @german_smirnov
+        ✈ Telegram
+      </a>
+      <a href="https://ig.me/m/german_smirnov" target="_blank" class="btn-light" style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">
+        ◎ Instagram
       </a>
     </div>
   </div>
@@ -1779,6 +1947,7 @@
   <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:center;">
     <a href="mailto:go@smirnovfit.ru">go@smirnovfit.ru</a>
     <a href="https://t.me/german_smirnov" target="_blank">@german_smirnov</a>
+    <a href="https://ig.me/m/german_smirnov" target="_blank">Instagram</a>
   </div>
 </footer>
 
@@ -1846,8 +2015,15 @@
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="https://t.me/german_smirnov" target="_blank">✈ &nbsp;Написать в Telegram</a>
+  <div style="display:flex;gap:1rem;justify-content:center;">
+    <a href="https://t.me/german_smirnov" target="_blank" style="flex:1;justify-content:center;">✈ Telegram</a>
+    <a href="https://ig.me/m/german_smirnov" target="_blank" style="flex:1;justify-content:center;opacity:0.7;">◎ Instagram</a>
+  </div>
 </div>
 
 </body>
 </html>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3ZX59B4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
