@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M3ZX59B4');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ── SEO ── -->
 <title>Герман Смирнов — Fitness Coach | Москва и онлайн</title>
-<meta name="description" content="Герман Смирнов — персональный Fitness Coach и нутрициолог. Индивидуальные программы тренировок и питания, онлайн-ведение. Официально, по договору. Москва и онлайн.">
-<meta name="keywords" content="фитнес коуч, персональный тренер Москва, нутрициолог онлайн, программа питания, программа тренировок, фитнес онлайн, коучинг похудение, Герман Смирнов тренер">
+<meta name="description" content="Герман Смирнов — Fitness Coach и нутрициолог. Индивидуальные программы тренировок и питания. InBody 98/100. 2000+ часов обучения. Онлайн и очно в Москве. Официально, по договору.">
+<meta name="keywords" content="фитнес коуч Москва, персональный тренер онлайн, нутрициолог, Герман Смирнов, fitness coach Moscow, программа тренировок, похудение мужчины, набор мышечной массы, InBody состав тела, кинезиология, биомеханика, FPA тренер">
 <meta name="author" content="Герман Смирнов">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smirnovcoach.ru/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- ── Open Graph (соцсети) ── -->
 <meta property="og:type" content="website">
@@ -25,6 +19,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="Герман Смирнов — Fitness Coach | Москва и онлайн">
 <meta property="og:description" content="Индивидуальные программы тренировок и питания. Онлайн и очно в Москве. Официально, по договору. Без шаблонов — только система под тебя.">
 <meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1N583rceutu3XBEe0rCPtKEYbKPdOMmZQ">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1600">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1N583rceutu3XBEe0rCPtKEYbKPdOMmZQ">
 
 <!-- ── Twitter Card ── -->
 <meta name="twitter:card" content="summary">
@@ -50,8 +48,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "offers": {
     "@type": "Offer",
     "name": "Персональный фитнес-коучинг",
-    "priceCurrency": "RUB"
-  }
+    "priceCurrency": "RUB",
+    "priceRange": "1500-12000"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Москва"},
+    {"@type": "Country", "name": "Россия"}
+  ],
+  "knowsAbout": ["Фитнес", "Нутрициология", "Коучинг", "Биомеханика", "Физиология"],
+  "hasCredential": "FPA Персональный тренер"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -268,6 +273,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero-photo-wrap {
     position: relative;
     overflow: hidden;
+  }
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
   .hero-photo-wrap img {
     width: 100%;
@@ -603,10 +615,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding-bottom: 3.5rem;
     background: var(--ink);
     color: var(--white);
-    background-image: url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1400&q=60&fit=crop&crop=top");
-    background-size: cover;
-    background-position: center 30%;
-    background-blend-mode: luminosity;
+    /* video bg handled via HTML */
     position: relative;
   }
   #forwhom::after {
@@ -616,6 +625,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: rgba(26,25,23,0.82);
     pointer-events: none;
     z-index: 0;
+  }
+  .forwhom-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.18;
+    z-index: 0;
+    pointer-events: none;
   }
   #forwhom > * { position: relative; z-index: 1; }
   #forwhom .section-label { color: rgba(255,255,255,0.35); }
@@ -717,30 +737,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .diff-item:hover { margin: 0 -5vw; padding: 2rem 5vw; }
   }
 
-  /* ── PHOTO STRIP ── */
-  .photo-strip {
-    padding: 0;
-    background: var(--ink);
-    overflow: hidden;
-  }
-  .photo-strip-inner {
-    display: flex;
-    gap: 3px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .photo-strip-inner::-webkit-scrollbar { display: none; }
-  .photo-strip-inner img {
-    height: 400px;
-    width: auto;
-    object-fit: cover;
-    flex-shrink: 0;
-    filter: brightness(0.8) contrast(1.05);
-    transition: filter 0.3s, transform 0.4s;
-  }
-  .photo-strip-inner img:hover { filter: brightness(1) contrast(1); transform: scale(1.02); }
-  @media (max-width: 768px) { .photo-strip-inner img { height: 260px; } }
+
 
   /* ── EDUCATION ── */
   #education { background: var(--bg-alt); padding-top: 3.5rem; padding-bottom: 3.5rem; }
@@ -834,7 +831,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     object-fit: cover;
     object-position: center top;
     display: block;
-    filter: brightness(0.75) contrast(1.1);
+    filter: grayscale(15%) brightness(0.75) contrast(1.08);
   }
   .guarantees-content {
     display: flex;
@@ -913,6 +910,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transform: translate(-50%, -50%);
     pointer-events: none;
     letter-spacing: -0.02em;
+  }
+
+
+  .cta-spots {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 2rem;
   }
 
   /* ── FOOTER ── */
@@ -1033,6 +1047,122 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 768px) {
     .philosophy-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
     .phil-aside { padding-top: 0; }
+  }
+
+
+  .results-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+  }
+  .results-photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: grayscale(15%) contrast(1.04) brightness(0.9);
+  }
+  .results-inbody-video {
+    height: 280px;
+    overflow: hidden;
+  }
+  @media (max-width: 600px) {
+    .results-media { grid-template-columns: 1fr; }
+    .results-photo img, .results-inbody-video { height: 220px; }
+  }
+  .phil-wisdom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.07);
+    margin: 3rem 0 2.5rem;
+  }
+  .phil-wisdom-item {
+    padding: 2rem 1.5rem;
+    background: rgba(255,255,255,0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .phil-wisdom-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+  .phil-wisdom-text {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.38);
+    line-height: 1.7;
+  }
+  .phil-books-imgs {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .phil-books-imgs img {
+    width: 48px;
+    height: 66px;
+    object-fit: cover;
+    opacity: 0.6;
+    filter: grayscale(30%);
+    transition: opacity 0.2s;
+  }
+  .phil-books-imgs img:hover { opacity: 1; }
+  @media (max-width: 768px) {
+    .phil-wisdom { grid-template-columns: 1fr; }
+  }
+  /* ── LEAD MAGNET BANNER ── */
+  #leadmagnet { background: var(--ink); padding: 3rem 4vw; }
+  .lm-banner {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.5rem 3rem;
+  }
+  .lm-tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .lm-title {
+    font-family: var(--serif);
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    font-weight: 300;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.4;
+    flex: 1;
+    min-width: 200px;
+  }
+  .lm-title em { font-style: italic; color: rgba(255,255,255,0.45); }
+  .lm-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.38);
+    flex-shrink: 0;
+  }
+  .lm-note {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.18);
+    margin-top: 0.5rem;
+    white-space: nowrap;
+  }
+  @media (max-width: 768px) {
+    .lm-banner { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; gap: 1.25rem; }
+    .lm-note { white-space: normal; }
   }
 
   /* ── FADE IN ── */
@@ -1199,46 +1329,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   @media (max-width: 768px) { .results-grid { grid-template-columns: 1fr; } }
 
-  /* ── TESTIMONIALS ── */
-  #testimonials { background: var(--bg-alt); }
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-  .testi-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    padding: 2rem 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .testi-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
-  .testi-stars { color: var(--ink); font-size: 0.8rem; letter-spacing: 0.2em; }
-  .testi-text {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--ink);
-    line-height: 1.6;
-    flex: 1;
-  }
-  .testi-text::before { content: '«'; color: var(--ink-muted); }
-  .testi-text::after { content: '»'; color: var(--ink-muted); }
-  .testi-author {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-  }
-  @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } }
+
 
   /* ── FAQ ── */
   #faq { background: var(--bg-alt); color: var(--ink); padding-top: 3.5rem; padding-bottom: 3.5rem; }
@@ -1421,10 +1512,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* Add bottom padding on mobile so sticky doesn't cover content */
   @media (max-width: 768px) { body { padding-bottom: 56px; } }
 </style>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3ZX59B4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!-- Яндекс Метрика: замените XXXXXXXX на ваш ID счётчика с metrika.yandex.ru -->
+<!-- <script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date(); k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+   ym(XXXXXXXX, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript> -->
+
+<!-- Google Analytics: замените G-XXXXXXXXXX на ваш ID с analytics.google.com -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+</script> -->
+
 </head>
 <body>
 
@@ -1434,16 +1538,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="nav-links">
     <li><a href="#about">О себе</a></li>
     <li><a href="#services">Услуги</a></li>
+    <li><a href="#philosophy">Философия</a></li>
     <li><a href="#results">Результаты</a></li>
-    <li><a href="#testimonials">Отзывы</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#leadmagnet">Гид</a></li>
     <li><a href="#booking">Запись</a></li>
   </ul>
-  <div style="display:flex;gap:0.5rem;align-items:center;">
-    <a href="https://t.me/german_smirnov" target="_blank" class="nav-cta">Написать</a>
-    <a href="https://ig.me/m/german_smirnov" target="_blank" class="nav-cta" style="background:transparent;color:var(--ink);border:1px solid var(--border);" title="Instagram Direct">IG</a>
-  </div>
+  <a href="https://t.me/german_smirnov" target="_blank" class="nav-cta">Написать</a>
 </nav>
 
 <!-- HERO -->
@@ -1461,19 +1561,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-slogan fade-up delay-2">Свобода — это не отсутствие дисциплины. Это когда дисциплина стала твоей природой.</p>
     <div class="hero-btns fade-up delay-3">
       <a href="https://t.me/german_smirnov" target="_blank" class="btn-primary">
-        <span class="btn-icon">✈</span>Telegram
+        <span class="btn-icon">✈</span> Написать в Telegram
       </a>
-      <a href="https://ig.me/m/german_smirnov" target="_blank" class="btn-outline">
-        Instagram
-      </a>
-      <a href="#services" class="btn-outline" style="border-color:var(--border);color:var(--ink-muted);">Услуги →</a>
+      <a href="#services" class="btn-outline">Услуги и цены</a>
     </div>
   </div>
 
   <div class="hero-photo-wrap">
-    <img src="https://wsrv.nl/?url=i.pinimg.com/1200x/bd/6c/dd/bd6cddde34de6215e88ce25bded64e46.jpg&w=900&output=webp" 
-         onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&fit=crop'"
-         alt="Герман Смирнов — фитнес-коуч">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://lh3.googleusercontent.com/d/1N583rceutu3XBEe0rCPtKEYbKPdOMmZQ">
+      <source src="https://drive.google.com/uc?export=download&id=1hR92t9G9bhlissMWh_urKbiCtsujNc5s" type="video/mp4">
+      <img src="https://lh3.googleusercontent.com/d/1N583rceutu3XBEe0rCPtKEYbKPdOMmZQ" alt="Герман Смирнов — Fitness Coach">
+    </video>
     <div class="hero-photo-overlay"></div>
   </div>
 </section>
@@ -1495,18 +1593,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="about-photos-wrap">
     <div class="about-photos fade-up delay-2">
-      <img src="https://wsrv.nl/?url=i.pinimg.com/1200x/f3/fe/72/f3fe7202b4008c3cd26d625f5d632b25.jpg&w=600&output=webp"
-           onerror="this.src='https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80&fit=crop&crop=top'" alt="" class="about-photo">
-      <img src="https://wsrv.nl/?url=i.pinimg.com/1200x/a3/e9/eb/a3e9eb71bf2f674c3a5017110cb761c4.jpg&w=600&output=webp"
-           onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80&fit=crop&crop=top'" alt="" class="about-photo">
-      <img src="https://wsrv.nl/?url=i.pinimg.com/736x/49/3c/32/493c3259f4344ccdb1a3bca28dabd437.jpg&w=600&output=webp"
-           onerror="this.src='https://images.unsplash.com/photo-1598971639058-fab3c3109a34?w=600&q=80&fit=crop&crop=top'" alt="" class="about-photo">
+      <img src="https://lh3.googleusercontent.com/d/1N583rceutu3XBEe0rCPtKEYbKPdOMmZQ" alt="Герман Смирнов" class="about-photo">
+      <img src="https://lh3.googleusercontent.com/d/19arUMvBm8uZ1atHy-aev8me7YAkWY-IU" alt="" class="about-photo">
+      <img src="https://lh3.googleusercontent.com/d/1WmGijT64aA4v-jYHxEvNubna1M0r0_G8" alt="" class="about-photo">
     </div>
   </div>
 </section>
 
 <!-- FOR WHOM -->
 <section id="forwhom">
+  <video class="forwhom-video-bg" autoplay muted loop playsinline>
+    <source src="https://drive.google.com/uc?export=download&id=1vh7BjJl2aOcKisS2hA1YGTuAu9htIAvE" type="video/mp4">
+  </video>
   <div class="section-label fade-up">Кому подойдёт</div>
   <h2 class="fade-up delay-1">Я работаю с теми,<em> кто готов.</em></h2>
   <div class="forwhom-grid">
@@ -1727,6 +1825,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="results">
   <div class="section-label fade-up">Мои показатели</div>
   <h2 class="fade-up delay-1">InBody 270 <em>· 98 из 100</em></h2>
+  <div class="results-media fade-up delay-2">
+    <div class="results-photo">
+      <img src="https://lh3.googleusercontent.com/d/13ZR8XrsFGU3kKf8RPHmC_n7vZJ8OkABM" alt="Герман Смирнов InBody результаты">
+    </div>
+    <div class="results-inbody-video">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;border-radius:0;filter:grayscale(20%);">
+        <source src="https://drive.google.com/uc?export=download&id=13qE02kDbDavlxGEZLVAuVpzdxPuyKsMy" type="video/mp4">
+      </video>
+    </div>
+  </div>
   <p class="fade-up delay-2" style="color:rgba(255,255,255,0.45);font-size:0.82rem;margin-bottom:3rem;letter-spacing:0.05em;">
     Рост 190 см · Возраст 32 · Дата измерения 04.01.2010 · Оценка InBody <strong style="color:rgba(255,255,255,0.75);">98/100 баллов</strong>
   </p>
@@ -1851,26 +1959,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- LEAD MAGNET -->
 <section id="leadmagnet">
-  <div class="leadmagnet-wrap">
-    <div class="leadmagnet-cover fade-up">
-      <div class="leadmagnet-cover-tag">Бесплатно · PDF-гид</div>
-      <div class="leadmagnet-cover-title">3 ошибки в питании, которые мешают прогрессу</div>
-      <div class="leadmagnet-cover-author">Герман Смирнов · Fitness Coach</div>
+  <div class="lm-banner fade-up">
+    <div class="lm-tag">Бесплатно · PDF</div>
+    <div class="lm-title">Что такое фитнес на самом деле — <em>и почему 80% результата вне зала</em></div>
+    <div class="lm-points">
+      <span>→ Питание и сон важнее тренировок</span>
+      <span>→ 3 ошибки которые сводят всё к нулю</span>
+      <span>→ Система которая работает без силы воли</span>
     </div>
-    <div class="leadmagnet-body fade-up delay-1">
-      <div class="section-label">Бесплатный гид</div>
-      <h2>Получи PDF<em> — бесплатно</em></h2>
-      <p>Три системные ошибки, которые делают большинство людей. Не «ешь меньше» — а конкретные механизмы, которые саботируют результат незаметно.</p>
-      <ul class="leadmagnet-list">
-        <li>Почему дефицит калорий не работает без учёта белка</li>
-        <li>Какой ритм питания разрушает обмен быстрее, чем «вредная еда»</li>
-        <li>Ошибка восстановления, которую делают 9 из 10 тренирующихся</li>
-      </ul>
-      <a href="https://t.me/german_smirnov" target="_blank" class="btn-outline-white fade-up delay-2">
-        Получить в Telegram →
-      </a>
-      <p style="margin-top:1rem;font-size:0.72rem;color:rgba(255,255,255,0.2);">Пишешь в TG — получаешь PDF сразу. Без подписок и рассылок.</p>
-    </div>
+    <a href="https://t.me/german_smirnov" target="_blank" class="btn-outline-white">Получить в Telegram →</a>
+    <p class="lm-note">Пишешь — получаешь PDF сразу. Без рассылок.</p>
   </div>
 </section>
 
@@ -1920,9 +2018,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://t.me/german_smirnov" target="_blank" class="action-btn-outline">
         Telegram
       </a>
-      <a href="https://ig.me/m/german_smirnov" target="_blank" class="action-btn-outline">
-        Instagram
-      </a>
     </div>
   </div>
 </section>
@@ -1930,16 +2025,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- FINAL CTA -->
 <section id="cta">
   <div class="cta-bg-text">Начнём</div>
+  <div class="cta-spots fade-up">🔥 Открыто 3 места на июль — старт 1 числа</div>
   <div class="cta-inner">
     <h2 class="fade-up">Готов<em> начать?</em></h2>
     <p class="fade-up delay-1">Напиши — расскажи свою цель. Разберёмся вместе.</p>
     <p class="fade-up delay-2" style="font-size:0.8rem;color:rgba(255,255,255,0.3);margin-top:0.5rem;letter-spacing:0.05em;">Без оверкоучинга. Без лишнего давления. Только система.</p>
     <div class="cta-buttons fade-up delay-2">
       <a href="https://t.me/german_smirnov" target="_blank" class="btn-light">
-        ✈ Telegram
-      </a>
-      <a href="https://ig.me/m/german_smirnov" target="_blank" class="btn-light" style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);">
-        ◎ Instagram
+        ✈ Написать в Telegram
       </a>
     </div>
   </div>
@@ -1947,6 +2040,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- FOOTER -->
 <footer>
+  <p style="font-size:0.68rem;color:var(--ink-muted);opacity:0.5;text-align:center;margin-bottom:0.75rem;max-width:600px;line-height:1.6;">Программы составляются индивидуально на основе анатомии, физиологии, биомеханики и знаний, полученных в FPA. Не являются авторскими методиками.</p>
   <span>© 2026 ИП Смирнов Г.В. · ИНН 470308325335</span>
   <div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:center;">
     <a href="mailto:go@smirnovfit.ru">go@smirnovfit.ru</a>
