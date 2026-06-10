@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smirnovcoach.ru/sitemap.xml
+Sitemap: https://smirnovfit.ru/sitemap.xml
