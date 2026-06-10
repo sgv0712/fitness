@@ -168,9 +168,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     flex-direction: column;
     justify-content: center;
     padding: 2rem 4vw 5rem;
-    margin-top: -8rem;
     position: relative;
     z-index: 2;
+    transform: translateY(-8rem);
   }
   .hero-name {
     font-family: var(--serif);
@@ -312,7 +312,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     #hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-photo-wrap { height: 65vw; }
     .hero-photo-overlay { background: linear-gradient(to bottom, var(--bg) 0%, transparent 40%); }
-    .hero-left { padding: 2rem 5vw 3rem; }
+    .hero-left {
+      padding: 2rem 5vw 3rem;
+      transform: none;
+      text-align: left;
+    }
     .hero-name { font-size: clamp(2.8rem, 14vw, 5rem); }
     .hero-slogan { font-size: 1rem; }
     .btn-primary, .btn-outline { padding: 0.85rem 1.5rem; font-size: 0.75rem; }
@@ -2127,6 +2131,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Make all fade-ups visible immediately on mobile/slow connections
   function revealAll() {
     document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+  }
+
+  // Animate edu-hours counter
+  const eduHours = document.querySelector('.edu-hours');
+  if (eduHours) {
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          let start = 0, end = 2000, duration = 1500;
+          let startTime = null;
+          const step = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const val = Math.floor(progress * end);
+            eduHours.textContent = val.toLocaleString() + '+';
+            if (progress < 1) requestAnimationFrame(step);
+            else eduHours.textContent = '2000+';
+          };
+          requestAnimationFrame(step);
+          countObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    countObserver.observe(eduHours);
   }
 
   const observer = new IntersectionObserver((entries) => {
