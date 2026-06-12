@@ -40,7 +40,7 @@
   "description": "Персональный фитнес-коуч и нутрициолог. Индивидуальные программы тренировок и питания онлайн и очно в Москве.",
   "url": "https://smirnovcoach.ru",
   "email": "go@smirnovfit.ru",
-  "sameAs": ["https://t.me/german_smirnov", "https://www.instagram.com/gsmirnvfit"],
+  "sameAs": ["https://t.me/german_smirnov", "https://www.instagram.com/german_smirnov_fit"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Москва",
@@ -167,7 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 4vw 8rem;
+    padding: 2rem 4vw 14rem;
     position: relative;
     z-index: 2;
   }
@@ -308,19 +308,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     z-index: 1;
   }
   @media (max-width: 768px) {
-    #hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-photo-wrap { height: 55vh; min-height: 300px; }
-    .hero-video { object-position: center 30%; }
-    .hero-photo-overlay { background: linear-gradient(to bottom, var(--bg) 0%, transparent 40%); }
+    #hero {
+      grid-template-columns: 1fr;
+      min-height: 100svh;
+      position: relative;
+    }
+    .hero-photo-wrap {
+      position: absolute !important;
+      inset: 0;
+      height: 100% !important;
+      min-height: unset !important;
+      z-index: 0;
+    }
+    .hero-video { object-position: center center; }
+    .hero-photo-overlay {
+      background: linear-gradient(to bottom, rgba(247,245,242,0.25) 0%, rgba(247,245,242,0.1) 50%, rgba(247,245,242,0.5) 100%);
+    }
     .hero-left {
-      padding: 2rem 5vw 3rem;
+      position: relative;
+      z-index: 2;
+      padding: 7rem 5vw 4rem;
       justify-content: flex-start;
+      min-height: 100svh;
     }
     .hero-name { font-size: clamp(2.8rem, 14vw, 5rem); }
     .hero-slogan { font-size: 1rem; }
     .hero-btns { flex-wrap: nowrap; gap: 0.75rem; }
     .btn-primary, .btn-outline { padding: 0.85rem 1.2rem; font-size: 0.7rem; flex: 1; text-align: center; justify-content: center; white-space: nowrap; }
   }
+
+  @media (max-width: 768px) { .sessions-grid { grid-template-columns: repeat(2, 1fr) !important; } }
 
   /* ── SECTION COMMON ── */
   section { padding: 5.5rem 4vw; }
@@ -460,7 +477,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .tab-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
   .tab-btn:hover { color: var(--ink); }
   .tab-panel { display: none; }
-  .tab-panel.active { display: grid; }
+  .tab-panel.active { display: block; }
+  #tab-individual.active, #tab-packages.active { display: grid; }
 
   .services-grid {
     display: grid;
@@ -604,7 +622,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gap: 0.35rem;
     padding: 0.75rem 0;
     border-top: 1px solid var(--border);
-    margin-top: auto;
+    margin-top: 0;
   }
   .package-includes li {
     display: flex;
@@ -642,9 +660,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(26,25,23,0.65);
+    background: rgba(16,14,12,0.72);
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
   }
   .forwhom-video-bg {
     position: absolute;
@@ -653,13 +671,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 0.9;
+    opacity: 1;
     z-index: 0;
     pointer-events: none;
     border: none;
     transform: scale(1.05);
   }
-  #forwhom > * { position: relative; z-index: 1; }
+  #forwhom > *:not(video) { position: relative; z-index: 2; }
   #forwhom .section-label { color: rgba(255,255,255,0.35); }
   #forwhom .section-label::before { background: rgba(255,255,255,0.25); }
   #forwhom h2 {
@@ -879,8 +897,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .guarantees-content cite { font-style: normal; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
   @media (max-width: 768px) {
     .guarantees-split { grid-template-columns: 1fr; }
-    .guarantees-photo { height: 70vw; min-height: 260px; }
-    .guarantees-photo img { object-position: center 15%; }
+    .guarantees-photo { height: 80vw; min-height: 300px; }
+    .guarantees-photo img { object-position: center 0%; }
     .guarantees-content { padding: 4rem 5vw; }
   }
 
@@ -1242,6 +1260,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .fade-up.delay-3 { transition-delay: 0.24s; }
     .fade-up.delay-4 { transition-delay: 0.32s; }
     .fade-up.delay-5 { transition-delay: 0.4s; }
+    /* Hero elements — no animation, always visible */
+    #hero .fade-up {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
   /* ── FORM & BOOKING ── */
   #anketa {
@@ -1645,7 +1669,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="hero-photo-wrap">
     <video class="hero-video" autoplay muted loop playsinline>
-      <source src="https://res.cloudinary.com/dz5odt5mr/video/upload/so_4,eo_8,du_4/video_h8awlm.mp4" type="video/mp4">
+      <source src="https://res.cloudinary.com/dz5odt5mr/video/upload/v1781074810/calisthenics_workout_aesthetic_abs_handstand_Dm_for_credit_xdlmgq.mp4" type="video/mp4">
     </video>
     <div class="hero-video-top-fade"></div>
     <div class="hero-photo-overlay"></div>
@@ -1679,7 +1703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- FOR WHOM -->
 <section id="forwhom">
   <video class="forwhom-video-bg" autoplay muted loop playsinline preload="auto" id="forwhom-video">
-    <source src="https://res.cloudinary.com/dz5odt5mr/video/upload/Centric_-_UPDATE_0906_wbj4b.mp4" type="video/mp4">
+    <source src="https://res.cloudinary.com/dz5odt5mr/video/upload/so_4,eo_8,du_4/video_h8awlm.mp4" type="video/mp4">
   </video>
   <div class="section-label fade-up">Кому подойдёт</div>
   <h2 class="fade-up delay-1">Я работаю с теми,<em> кто готов.</em></h2>
@@ -1715,53 +1739,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="services-tabs fade-up delay-1">
-    <button class="tab-btn active" data-tab="individual">Разовые услуги</button>
+    <button class="tab-btn active" data-tab="individual">Услуги</button>
     <button class="tab-btn" data-tab="packages">Пакеты</button>
   </div>
 
   <!-- Individual -->
   <div class="tab-panel active" id="tab-individual">
-    <div class="services-grid">
+    <div class="packages-grid">
 
-      <div class="service-card fade-up">
-        <div class="service-icon"></div>
-        <div class="service-name">Программа тренировок</div>
-        <div class="service-price"><strong>1 000 ₽</strong></div>
-        <div class="service-desc">Индивидуальная программа на 4 недели — под твою цель, уровень и условия. Зал или дома. Каждое упражнение с описанием техники и видео-ссылкой. Ничего лишнего — только то, что даст результат.</div>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta">Заказать →</a>
+      <div class="package-card fade-up">
+        <div class="package-badge">01</div>
+        <div class="package-name">Программа тренировок</div>
+        <div class="package-desc">Индивидуальная программа на 4 недели — под твою цель, уровень и условия. Зал или дома. С описанием техники и видео-ссылками.</div>
+        <div class="package-price-val">1 000 ₽</div>
+        <ul class="package-includes">
+          <li><span class="check">✓</span>Анализ уровня и целей</li>
+          <li><span class="check">✓</span>Программа на 4 недели</li>
+          <li><span class="check">✓</span>Техника + видео-ссылки</li>
+        </ul>
+        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
-      <div class="service-card fade-up delay-1">
-        <div class="service-icon"></div>
-        <div class="service-name">План питания</div>
-        <div class="service-price"><strong>1 500 ₽</strong></div>
-        <div class="service-desc">Рацион под твою цель с учётом предпочтений, режима и образа жизни. Без жёстких ограничений и «нельзя». Питание, которое ты сможешь соблюдать — потому что оно создано для тебя, а не для идеального атлета из интернета.</div>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta">Заказать →</a>
+      <div class="package-card fade-up delay-1">
+        <div class="package-badge">02</div>
+        <div class="package-name">План питания</div>
+        <div class="package-desc">Рацион под твою цель с учётом предпочтений, режима и образа жизни. Без жёстких ограничений.</div>
+        <div class="package-price-val">1 500 ₽</div>
+        <ul class="package-includes">
+          <li><span class="check">✓</span>Расчёт КБЖУ</li>
+          <li><span class="check">✓</span>Рацион под цель</li>
+          <li><span class="check">✓</span>Без жёстких ограничений</li>
+        </ul>
+        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
-
-      <div class="service-card fade-up delay-2">
-        <div class="service-icon"></div>
-        <div class="service-name">Онлайн-ведение</div>
-        <div class="service-price"><strong>4 000 ₽</strong> <span style="font-size:0.78rem;text-transform:none;letter-spacing:0;">/месяц</span></div>
-        <div class="service-desc">Не программа — а живое сопровождение. Еженедельная корректировка по твоим результатам, поддержка в мессенджере каждый день. Я отвечаю на вопросы, разбираю ситуации, держу курс вместе с тобой. Весь месяц — рядом.</div>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta">Записаться →</a>
+      <div class="package-card fade-up delay-2">
+        <div class="package-badge">03</div>
+        <div class="package-name">Тренировка онлайн</div>
+        <div class="package-desc">Тренировка по видеосвязи — ты двигаешься, я корректирую технику в реальном времени. Живой контроль и обратная связь в момент.</div>
+        <div class="package-price-val">1 500 ₽ <span style="font-size:0.8rem;">/час</span></div>
+        <ul class="package-includes">
+          <li><span class="check">✓</span>Контроль техники live</li>
+          <li><span class="check">✓</span>Коррекция нагрузки</li>
+          <li><span class="check">✓</span>Обратная связь сразу</li>
+        </ul>
+        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
-      <div class="service-card fade-up delay-3">
-        <div class="service-icon"></div>
-        <div class="service-name">Персональная тренировка онлайн</div>
-        <div class="service-price"><strong>1 500 ₽</strong> <span style="font-size:0.78rem;text-transform:none;letter-spacing:0;">/час</span></div>
-        <div class="service-desc">Тренировка по видеосвязи — ты двигаешься, я смотрю и корректирую технику в реальном времени. Подходит тем, кому важен живой контроль и обратная связь в момент, а не после.</div>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta">Записаться →</a>
-      </div>
-
-      <div class="service-card fade-up delay-4">
-        <div class="service-icon"></div>
-        <div class="service-name">Персональная тренировка очно</div>
-        <div class="service-price"><strong>3 000 ₽</strong> <span style="font-size:0.78rem;text-transform:none;letter-spacing:0;">/час · Москва</span></div>
-        <div class="service-desc">Живая тренировка в зале в Москве. Полный контроль техники, нагрузки и темпа. Место и время — по договорённости.</div>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta">Записаться →</a>
+      <div class="package-card fade-up delay-3">
+        <div class="package-badge">04</div>
+        <div class="package-name">Тренировка очно</div>
+        <div class="package-desc">Живая тренировка в зале в Москве. Полный контроль техники, нагрузки и темпа. Место и время — по договорённости.</div>
+        <div class="package-price-val">5 000 ₽ <span style="font-size:0.8rem;">/занятие</span></div>
+        <ul class="package-includes">
+          <li><span class="check">✓</span>Москва, зал по договорённости</li>
+          <li><span class="check">✓</span>Полный контроль техники</li>
+          <li><span class="check">✓</span>Индивидуальный темп</li>
+        </ul>
+        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
     </div>
@@ -1769,21 +1804,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Packages -->
   <div class="tab-panel" id="tab-packages">
-    <div class="packages-grid">
+    <div class="packages-grid" style="grid-template-columns: repeat(3,1fr);">
 
       <div class="package-card fade-up">
-        <div class="package-badge">Старт</div>
-        <div class="package-name">Занятия</div>
-        <div class="package-desc">Оценка формы и готовый план тренировок на 4 недели. Оптимально, если питание пока не трогаем.</div>
-        <div class="package-price-val">1 500 ₽</div>
-        <ul class="package-includes">
-          <li><span class="check">✓</span>Фитнес-тестирование</li>
-          <li><span class="check">✓</span>Программа тренировок</li>
-        </ul>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
-      </div>
-
-      <div class="package-card fade-up delay-1">
         <div class="package-badge">Оптимум</div>
         <div class="package-name">Занятия + питание</div>
         <div class="package-desc">Тренировки и питание в единой системе — лучший выбор для устойчивого старта.</div>
@@ -1797,11 +1820,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
-      <div class="package-card featured fade-up delay-2">
+      <div class="package-card featured fade-up delay-1">
         <div class="package-badge">Полный онлайн</div>
         <div class="package-name">Занятия + питание + ведение</div>
         <div class="package-desc">Сопровождение весь месяц: корректировки, поддержка в мессенджере каждый день.</div>
-        <div class="package-price-val">6 500 ₽ <span>/ мес</span></div>
         <ul class="package-includes">
           <li><span class="check">✓</span>Фитнес-тестирование</li>
           <li><span class="check">✓</span>Программа тренировок</li>
@@ -1809,14 +1831,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="check">✓</span>Программа питания</li>
           <li><span class="check">✓</span>Онлайн-ведение весь месяц</li>
         </ul>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--ink-muted);">
+          <div style="font-family:var(--sans);font-size:0.68rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.6rem;color:rgba(255,255,255,0.7);">Занятия онлайн</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.1);">
+            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">4</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">1×/нед · 9 000 рублей</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">8</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">2×/нед · 16 000 рублей</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">12</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">3×/нед · 21 000 рублей</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">16</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">4×/нед · 24 000 рублей</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.75rem">Написать →</a>
       </div>
 
-      <div class="package-card fade-up delay-3">
+      <div class="package-card fade-up delay-2">
         <div class="package-badge">Полный очно</div>
         <div class="package-name">Занятия + питание + зал</div>
         <div class="package-desc">Личное присутствие в зале. Контроль техники и нагрузки вживую, по договорённости.</div>
-        <div class="package-price-val">12 000 ₽ <span>/ мес</span></div>
         <ul class="package-includes">
           <li><span class="check">✓</span>Фитнес-тестирование</li>
           <li><span class="check">✓</span>Программа тренировок</li>
@@ -1824,13 +1866,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="check">✓</span>Программа питания</li>
           <li><span class="check">✓</span>Очное ведение в зале</li>
         </ul>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--ink-muted);">
+          <div style="font-family:var(--sans);font-size:0.68rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.6rem;color:var(--ink);">Занятия в месяц</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);">
+            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">4</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">1×/нед · 18 000 рублей</div>
+            </div>
+            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">8</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">2×/нед · 32 000 рублей</div>
+            </div>
+            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">12</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">3×/нед · 42 000 рублей</div>
+            </div>
+            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">16</div>
+              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">4×/нед · 48 000 рублей</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:0.75rem;font-family:var(--sans);font-size:0.7rem;color:var(--ink-soft);line-height:1.6;">
+          — 100% предоплата · 30 дней<br>
+          — Яндекс Сплит от 8 занятий по запросу
+        </div>
         <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
     </div>
   </div>
-</section>
 
+</section>
 <!-- DIFFERENTIATORS -->
 <section id="diff" style="position:relative;overflow:hidden;">
   <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.15;pointer-events:none;">
@@ -2101,7 +2168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://t.me/german_smirnov" target="_blank" class="btn-light">
         ✈ Написать в Telegram
       </a>
-      <a href="https://ig.me/m/gsmirnvfit" target="_blank" class="btn-light" style="background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;">
+      <a href="https://ig.me/m/german_smirnov_fit" target="_blank" class="btn-light" style="background:transparent;border:1px solid rgba(255,255,255,0.35);color:#fff;">
         ◎ Написать в Instagram
       </a>
     </div>
@@ -2218,7 +2285,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="sticky-cta" id="stickyCta">
   <div style="display:flex;gap:1rem;justify-content:center;">
     <a href="https://t.me/german_smirnov" target="_blank" style="flex:1;justify-content:center;">✈ Telegram</a>
-    <a href="https://ig.me/m/gsmirnvfit" target="_blank" style="flex:1;justify-content:center;opacity:0.7;">◎ Instagram</a>
+    <a href="https://ig.me/m/german_smirnov_fit" target="_blank" style="flex:1;justify-content:center;opacity:0.7;">◎ Instagram</a>
   </div>
 </div>
 
