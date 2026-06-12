@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a1917'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='18' font-weight='600' letter-spacing='1' fill='%23f7f5f2'%3EGSF%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='22' font-weight='600' letter-spacing='1' fill='%231a1917'%3EGSF%3C/text%3E%3C/svg%3E">
 
 <!-- ── SEO ── -->
 <title>Герман Смирнов — Fitness Coach | Москва и онлайн</title>
@@ -322,7 +322,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .hero-video { object-position: center center; }
     .hero-photo-overlay {
-      background: linear-gradient(to bottom, rgba(247,245,242,0.25) 0%, rgba(247,245,242,0.1) 50%, rgba(247,245,242,0.5) 100%);
+      background: linear-gradient(to bottom, rgba(247,245,242,0.45) 0%, rgba(247,245,242,0.15) 40%, rgba(247,245,242,0.55) 100%);
     }
     .hero-left {
       position: relative;
@@ -338,6 +338,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   @media (max-width: 768px) { .sessions-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+
+  .pkg-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    border-top: none;
+    padding: 0.6rem 0 0;
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    cursor: pointer;
+    margin-top: 0;
+  }
+  .pkg-toggle .pkg-toggle-icon { font-size: 1rem; line-height: 1; transition: transform 0.2s; }
+  .pkg-toggle.open .pkg-toggle-icon { transform: rotate(45deg); }
+  .package-card.featured .pkg-toggle { border-top-color: transparent; color: rgba(255,255,255,0.4); }
+  .service-desc { min-height: 4.5rem; }
 
   /* ── SECTION COMMON ── */
   section { padding: 5.5rem 4vw; }
@@ -495,6 +517,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-right: 1px solid var(--border);
     transition: background 0.25s;
   }
+  .service-card .service-name { min-height: 2.8rem; flex-shrink: 0; }
+  .service-card .service-desc { min-height: 5.5rem; flex-shrink: 0; }
+  .service-card .package-price-val { min-height: 2.2rem; flex-shrink: 0; }
+  .service-card .package-includes { flex-shrink: 0; }
+  .service-card .service-cta { margin-top: auto !important; }
   .service-card:last-child { border-right: none; }
   .service-card:hover { background: var(--bg); }
   .service-icon { display: none; }
@@ -536,7 +563,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 0.88rem;
     color: var(--ink-soft);
     line-height: 1.75;
-    flex: 1;
+    min-height: 5.5rem;
   }
   .service-cta {
     display: inline-flex;
@@ -553,12 +580,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .service-cta:hover { gap: 0.7rem; }
 
-  /* пакеты — горизонтальная сравнительная таблица */
   .packages-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
     border: 1px solid var(--border);
+    align-items: start;
+  }
+  /* Subgrid for aligned rows across cards */
+  @supports (grid-template-rows: subgrid) {
+    .packages-grid {
+      grid-template-rows: auto;
+    }
+    .package-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 7;
+    }
   }
   .package-card {
     background: var(--white);
@@ -570,6 +608,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     position: relative;
     border-right: 1px solid var(--border);
   }
+  .package-badge { min-height: 1.2rem; }
+  .package-name { min-height: 2.4rem; }
+  .package-desc { min-height: 4.5rem; flex-shrink: 0; }
+  .package-price-val { min-height: 2.2rem; flex-shrink: 0; }
+  .pkg-toggle { flex-shrink: 0; }
+  .service-cta { margin-top: auto !important; }
   .package-card:last-child { border-right: none; }
   .package-card:hover { background: var(--bg); }
   .package-card.featured {
@@ -637,11 +681,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 0.82rem;
     color: var(--ink-muted);
     line-height: 1.6;
+    min-height: 4.5rem;
   }
+  .pkg-toggle, .package-includes, .package-price-val { flex-shrink: 0; }
   @media (max-width: 900px) {
-    .packages-grid { grid-template-columns: repeat(2, 1fr); }
-    .package-card { border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
-    .package-card:nth-child(2n) { border-right: none; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .package-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .package-card:last-child { border-bottom: none; }
   }
   @media (max-width: 560px) {
     .packages-grid { grid-template-columns: 1fr; }
@@ -897,8 +943,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .guarantees-content cite { font-style: normal; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
   @media (max-width: 768px) {
     .guarantees-split { grid-template-columns: 1fr; }
-    .guarantees-photo { height: 80vw; min-height: 300px; }
-    .guarantees-photo img { object-position: center 0%; }
+    .guarantees-photo { height: 90vw; min-height: 320px; }
+    .guarantees-photo img { object-position: center top; }
     .guarantees-content { padding: 4rem 5vw; }
   }
 
@@ -989,7 +1035,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer a { color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: rgba(255,255,255,0.7); }
   @media (max-width: 768px) {
-    footer { padding: 2rem 5vw; }
+    footer { padding: 2rem 5vw; background: var(--ink); }
     footer > div { grid-template-columns: 1fr !important; text-align: center; }
     footer > div > div { justify-content: center; }
     footer > div > span { text-align: center !important; }
@@ -1412,6 +1458,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding-top: 1rem;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
+  @media (max-width: 768px) { .achievements-grid { grid-template-columns: 1fr !important; } }
   @media (max-width: 768px) { .results-grid { grid-template-columns: 1fr !important; } }
 
 
@@ -1610,7 +1657,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   @media (max-width: 768px) { .sticky-cta { display: block; } }
   /* Add bottom padding on mobile so sticky doesn't cover content */
-  @media (max-width: 768px) { body { padding-bottom: 56px; } }
+  @media (max-width: 768px) { 
+    body { padding-bottom: 56px; background: var(--ink); }
+    footer { margin-bottom: 0; }
+  }
 </style>
 <!-- Яндекс Метрика: замените XXXXXXXX на ваш ID счётчика с metrika.yandex.ru -->
 <!-- <script type="text/javascript">
@@ -1751,7 +1801,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="package-badge">01</div>
         <div class="package-name">Программа тренировок</div>
         <div class="package-desc">Индивидуальная программа на 4 недели — под твою цель, уровень и условия. Зал или дома. С описанием техники и видео-ссылками.</div>
-        <div class="package-price-val">1 000 ₽</div>
+        <div class="package-price-val">1 500 ₽</div>
         <ul class="package-includes">
           <li><span class="check">✓</span>Анализ уровня и целей</li>
           <li><span class="check">✓</span>Программа на 4 недели</li>
@@ -1764,7 +1814,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="package-badge">02</div>
         <div class="package-name">План питания</div>
         <div class="package-desc">Рацион под твою цель с учётом предпочтений, режима и образа жизни. Без жёстких ограничений.</div>
-        <div class="package-price-val">1 500 ₽</div>
+        <div class="package-price-val">1 999 ₽</div>
         <ul class="package-includes">
           <li><span class="check">✓</span>Расчёт КБЖУ</li>
           <li><span class="check">✓</span>Рацион под цель</li>
@@ -1777,7 +1827,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="package-badge">03</div>
         <div class="package-name">Тренировка онлайн</div>
         <div class="package-desc">Тренировка по видеосвязи — ты двигаешься, я корректирую технику в реальном времени. Живой контроль и обратная связь в момент.</div>
-        <div class="package-price-val">1 500 ₽ <span style="font-size:0.8rem;">/час</span></div>
+        <div class="package-price-val">2 500 ₽ <span style="font-size:0.8rem;">/час</span></div>
         <ul class="package-includes">
           <li><span class="check">✓</span>Контроль техники live</li>
           <li><span class="check">✓</span>Коррекция нагрузки</li>
@@ -1810,90 +1860,104 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="package-badge">Оптимум</div>
         <div class="package-name">Занятия + питание</div>
         <div class="package-desc">Тренировки и питание в единой системе — лучший выбор для устойчивого старта.</div>
-        <div class="package-price-val">3 000 ₽</div>
-        <ul class="package-includes">
+        <div class="package-price-val">2 999 ₽</div>
+        <button class="pkg-toggle open" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'flex':'none'">
+          <span>Что входит</span><span class="pkg-toggle-icon">+</span>
+        </button>
+        <ul class="package-includes" style="display:flex;">
           <li><span class="check">✓</span>Фитнес-тестирование</li>
           <li><span class="check">✓</span>Программа тренировок</li>
           <li><span class="check">✓</span>Расчёт КБЖУ</li>
           <li><span class="check">✓</span>Программа питания</li>
         </ul>
+        <div style="margin-top:0.6rem;font-family:var(--sans);font-size:0.68rem;color:var(--ink-soft);line-height:1.5;">— 100% предоплата · 28 дней</div>
         <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
       <div class="package-card featured fade-up delay-1">
         <div class="package-badge">Полный онлайн</div>
         <div class="package-name">Занятия + питание + ведение</div>
-        <div class="package-desc">Сопровождение весь месяц: корректировки, поддержка в мессенджере каждый день.</div>
-        <ul class="package-includes">
+        <div class="package-desc">Сопровождение 28 дней: еженедельные корректировки и ежедневная поддержка в мессенджере.</div>
+        <button class="pkg-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'flex':'none'">
+          <span>Что входит</span><span class="pkg-toggle-icon">+</span>
+        </button>
+        <ul class="package-includes" style="display:none;">
           <li><span class="check">✓</span>Фитнес-тестирование</li>
           <li><span class="check">✓</span>Программа тренировок</li>
           <li><span class="check">✓</span>Расчёт КБЖУ</li>
           <li><span class="check">✓</span>Программа питания</li>
-          <li><span class="check">✓</span>Онлайн-ведение весь месяц</li>
+          <li><span class="check">✓</span>Онлайн-ведение 28 дней</li>
         </ul>
-        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--ink-muted);">
-          <div style="font-family:var(--sans);font-size:0.68rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.6rem;color:rgba(255,255,255,0.7);">Занятия онлайн</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.1);">
-            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">4</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">1×/нед · 9 000 рублей</div>
+        <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.12);">
+          <div style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.5rem;color:rgba(255,255,255,0.5);">Занятия онлайн / мес</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.1);">
+            <div style="background:rgba(255,255,255,0.05);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;color:white;">4 <span style="font-size:0.6rem;color:rgba(255,255,255,0.4);">1×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:rgba(255,255,255,0.45);">9 000 рублей</div>
             </div>
-            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">8</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">2×/нед · 16 000 рублей</div>
+            <div style="background:rgba(255,255,255,0.05);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;color:white;">8 <span style="font-size:0.6rem;color:rgba(255,255,255,0.4);">2×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:rgba(255,255,255,0.45);">16 000 рублей</div>
             </div>
-            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">12</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">3×/нед · 21 000 рублей</div>
+            <div style="background:rgba(255,255,255,0.05);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;color:white;">12 <span style="font-size:0.6rem;color:rgba(255,255,255,0.4);">3×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:rgba(255,255,255,0.45);">21 000 рублей</div>
             </div>
-            <div style="background:rgba(255,255,255,0.05);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:white;">16</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:rgba(255,255,255,0.5);">4×/нед · 24 000 рублей</div>
+            <div style="background:rgba(255,255,255,0.05);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;color:white;">16 <span style="font-size:0.6rem;color:rgba(255,255,255,0.4);">4×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:rgba(255,255,255,0.45);">24 000 рублей</div>
             </div>
           </div>
         </div>
-        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.75rem">Написать →</a>
+        <div style="margin-top:0.6rem;font-family:var(--sans);font-size:0.68rem;color:rgba(255,255,255,0.4);line-height:1.5;">— Абонемент 28 дней</div>
+        <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.75rem;color:rgba(255,255,255,0.8);">Написать →</a>
       </div>
 
       <div class="package-card fade-up delay-2">
         <div class="package-badge">Полный очно</div>
         <div class="package-name">Занятия + питание + зал</div>
-        <div class="package-desc">Личное присутствие в зале. Контроль техники и нагрузки вживую, по договорённости.</div>
-        <ul class="package-includes">
+        <div class="package-desc">Личное присутствие в зале. Контроль техники и нагрузки вживую — по договорённости в Москве.</div>
+        <button class="pkg-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.style.display=this.classList.contains('open')?'flex':'none'">
+          <span>Что входит</span><span class="pkg-toggle-icon">+</span>
+        </button>
+        <ul class="package-includes" style="display:none;">
           <li><span class="check">✓</span>Фитнес-тестирование</li>
           <li><span class="check">✓</span>Программа тренировок</li>
           <li><span class="check">✓</span>Расчёт КБЖУ</li>
           <li><span class="check">✓</span>Программа питания</li>
           <li><span class="check">✓</span>Очное ведение в зале</li>
         </ul>
-        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--ink-muted);">
-          <div style="font-family:var(--sans);font-size:0.68rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.6rem;color:var(--ink);">Занятия в месяц</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);">
-            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">4</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">1×/нед · 18 000 рублей</div>
+        <div style="margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--border);">
+          <div style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:0.5rem;color:var(--ink-soft);">Занятия очно / мес</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);">
+            <div style="background:var(--bg-alt);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;">4 <span style="font-size:0.6rem;color:var(--ink-soft);">1×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:var(--ink-soft);">18 000 рублей</div>
             </div>
-            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">8</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">2×/нед · 32 000 рублей</div>
+            <div style="background:var(--bg-alt);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;">8 <span style="font-size:0.6rem;color:var(--ink-soft);">2×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:var(--ink-soft);">32 000 рублей</div>
             </div>
-            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">12</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">3×/нед · 42 000 рублей</div>
+            <div style="background:var(--bg-alt);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;">12 <span style="font-size:0.6rem;color:var(--ink-soft);">3×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:var(--ink-soft);">42 000 рублей</div>
             </div>
-            <div style="background:var(--bg-alt);padding:0.5rem 0.6rem;">
-              <div style="font-family:var(--serif);font-size:1.1rem;font-weight:300;">16</div>
-              <div style="font-family:var(--sans);font-size:0.6rem;color:var(--ink-soft);">4×/нед · 48 000 рублей</div>
+            <div style="background:var(--bg-alt);padding:0.4rem 0.6rem;">
+              <div style="font-family:var(--serif);font-size:1rem;font-weight:300;">16 <span style="font-size:0.6rem;color:var(--ink-soft);">4×/нед</span></div>
+              <div style="font-family:var(--sans);font-size:0.58rem;color:var(--ink-soft);">48 000 рублей</div>
             </div>
           </div>
         </div>
-        <div style="margin-top:0.75rem;font-family:var(--sans);font-size:0.7rem;color:var(--ink-soft);line-height:1.6;">
-          — 100% предоплата · 30 дней<br>
-          — Яндекс Сплит от 8 занятий по запросу
-        </div>
+        <div style="margin-top:0.6rem;font-family:var(--sans);font-size:0.68rem;color:var(--ink-soft);line-height:1.5;">— 100% предоплата<br>— Срок действия абонемента: 28 дней<br>— Яндекс Сплит от 8 занятий по запросу</div>
         <a href="https://t.me/german_smirnov" target="_blank" class="service-cta" style="margin-top:0.5rem">Написать →</a>
       </div>
 
+    </div>
+
+    <div style="margin-top:1.25rem;padding:0.9rem 1.5rem;background:var(--bg-alt);border:1px solid var(--border);font-family:var(--sans);font-size:0.72rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:1.5rem;">
+      <span>— 100% предоплата</span>
+      <span>— Абонемент действует 28 дней</span>
+      <span>— Яндекс Сплит от 8 занятий по запросу (комиссия сервиса добавляется к стоимости)</span>
     </div>
   </div>
 
@@ -1905,7 +1969,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </video>
   <div class="diff-header">
     <h2 class="fade-up">Мой<em style="font-style:italic;"> подход</em></h2>
-    <p class="fade-up delay-1" style="font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.4rem);font-style:italic;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.6;">Я не продаю мотивацию и не торгую обещаниями трансформации за 30 дней. Я строю системы. Индивидуально. Честно.</p>
+    <p class="fade-up delay-1" style="font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.4rem);font-style:italic;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.6;">Я не продаю мотивацию и не торгую обещаниями трансформации за 28 дней. Я строю системы. Индивидуально. Честно.</p>
   </div>
 
   <div class="diff-list">
@@ -2007,6 +2071,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
   </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:1.5rem;background:var(--ink);" class="achievements-grid">
+
+    <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,0.08);">
+      <div style="font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--white);margin-bottom:0.3rem;">Лига Героев</div>
+      <div style="font-family:var(--sans);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;">Участник</div>
+      <div style="font-family:var(--sans);font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">Крупнейший организатор массовых спортивных событий в России. Забеги, трейлы, велогонки. Экстремальные гонки с препятствиями в OCR-формате — «Гонка Героев».</div>
+    </div>
+
+    <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,0.08);">
+      <div style="font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--white);margin-bottom:0.3rem;">Ironstar</div>
+      <div style="font-family:var(--sans);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;">Триатлон</div>
+      <div style="font-family:var(--sans);font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">Триатлон: плавание, велогонка, бег. Три дисциплины — один старт. Проверка выносливости и воли.</div>
+    </div>
+
+    <div style="padding:1.75rem 2rem;">
+      <div style="font-family:var(--serif);font-size:1.5rem;font-weight:300;color:var(--white);margin-bottom:0.3rem;">500+ <em style="font-size:0.7em;font-style:normal;">км</em></div>
+      <div style="font-family:var(--sans);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;">Бег · плавание · велосипед</div>
+      <div style="font-family:var(--sans);font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.6;">Накопленный километраж в беге, плавании и на велосипеде — вместе.</div>
+    </div>
+
+  </div>
 </section>
 <section id="education">
   <div class="section-label fade-up">Образование</div>
@@ -2075,8 +2161,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-a">Да, и часто. Отсутствие опыта — это плюс: нет плохих привычек, которые надо переучивать. Начинаем с базы: техника, нагрузка, питание. Без лишнего стресса для тела и психики.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Как проходит первый месяц работы? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Начинаем с анкеты и разбора: цели, ритм жизни, ограничения. Затем — программа тренировок и питания. В течение месяца: ежедневная связь в мессенджере, раз в неделю корректировка по результатам. Без самостоятельного плавания.</div>
+      <div class="faq-q">Как проходят первые 28 дней? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Начинаем с анкеты и разбора: цели, ритм жизни, ограничения. Затем — программа тренировок и питания. В течение 28 дней: ежедневная связь в мессенджере, раз в неделю корректировка по результатам. Без самостоятельного плавания.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Сколько времени нужно на тренировки? <span class="faq-toggle">+</span></div>
