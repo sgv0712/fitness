@@ -324,7 +324,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .hero-video { object-position: center center; }
     .hero-photo-overlay {
-      background: linear-gradient(to bottom, rgba(247,245,242,0.75) 0%, rgba(247,245,242,0.55) 40%, rgba(247,245,242,0.75) 100%);
+      background: linear-gradient(to bottom, rgba(247,245,242,0.88) 0%, rgba(247,245,242,0.72) 40%, rgba(247,245,242,0.9) 100%);
     }
     .hero-left {
       position: relative;
@@ -735,8 +735,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: block;
       grid-row: span 1;
     }
-    .package-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .package-card { border-right: none; border-bottom: 1px solid var(--border); padding: 1.5rem 1.5rem 1.75rem; gap: 0.4rem; }
     .package-card:last-child { border-bottom: none; }
+    .package-badge { min-height: 0; }
+    .package-name { min-height: 0; }
+    .package-desc { min-height: 0; }
+    .package-price-val { min-height: 0; }
+    .packages-conditions { gap: 0.5rem !important; }
   }
   @media (max-width: 560px) {
     .packages-grid { grid-template-columns: 1fr; }
@@ -2003,7 +2008,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
 
-    <div style="margin-top:1.25rem;padding:0.9rem 1.5rem;background:var(--bg-alt);border:1px solid var(--border);font-family:var(--sans);font-size:0.72rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:1.5rem;">
+    <div class="packages-conditions" style="margin-top:1.25rem;padding:0.9rem 1.5rem;background:var(--bg-alt);border:1px solid var(--border);font-family:var(--sans);font-size:0.72rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:1.5rem;">
       <span>— Полная предоплата</span>
       <span>— Абонемент действует 28 дней</span>
       <span>— Яндекс Сплит от 8 занятий по запросу (комиссия сервиса оплачивается отдельно)</span>
